@@ -40,8 +40,11 @@ $utente3 = new Under18(
 );
 
 var_dump($utente1);
+echo $utente1-> getasString();
 var_dump($utente2);
+echo $utente2-> getasString();
 var_dump($utente3);
+echo $utente3-> getasString();
 
 
 // var_dump($utente1->calcolaPrezzo());

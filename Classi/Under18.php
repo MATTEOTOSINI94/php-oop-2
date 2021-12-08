@@ -7,8 +7,8 @@ class Under18 extends Utente {
   
 
 
-  public function __construct($_nome,$_cognome,$_eta,$_metodoDiPagamento,$arr){
-      parent::__construct($_nome,$_cognome,$_eta,$_metodoDiPagamento,$arr);
+  public function __construct($_nome,$_cognome,$_età,$_metodoDiPagamento,$arr){
+      parent::__construct($_nome,$_cognome,$_età,$_metodoDiPagamento,$arr);
       $this->getSconto();
       
   
@@ -16,16 +16,18 @@ class Under18 extends Utente {
   protected function getSconto(){
     // restituisce il costo del prodotto acquistato!
     $prezzoPieno=parent::calcolaPrezzo();
-    if ($this->eta < 18) {
+    if ($this->età < 18) {
       $this->prezzoUnder18 = $prezzoPieno * 0.4;
     }
     else{
       return $this->prezzoUnder18 ="Non sei un Over60;";
     }
-   
-   
 
-    
+}
+
+public function getasString(){
+  return  parent::getasString() . " Prezzo Scontato " . $this->prezzoUnder18;
+  
 }
  
 }

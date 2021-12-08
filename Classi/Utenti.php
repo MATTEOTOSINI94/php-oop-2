@@ -4,15 +4,15 @@ require_once __DIR__. "/Product.php";
 class Utente  {
     public $nome;
     public $cognome;
-    protected $eta;
-    private $prodottoAcquistato;
+    protected $età;
+    protected $prodottoAcquistato;
    
     
 
-    public function __construct($_nome,$_cognome,$_eta,$_metodoDiPagamento,$arr){
+    public function __construct($_nome,$_cognome,$_età,$_metodoDiPagamento,$arr){
         $this->setName($_nome);
         $this->setSurname($_cognome);
-        $this->setEtà($_eta);
+        $this->setEtà($_età);
         $this->metodoDiPagamento = new PaymentMethod($_metodoDiPagamento);
         $this->prodottoAcquistato = new Prodotto($arr);
         $this-> calcolaPrezzo();
@@ -30,8 +30,12 @@ class Utente  {
     protected function setSurname($surname){
         $this->cognome = $surname;
     }
-    protected function setEtà($eta){
-        $this->eta= $eta;
+    protected function setEtà($età){
+        $this->età= $età;
+    }
+
+    public function getasString(){
+        return $this->nome . " ". $this->cognome." anni:  ".$this->età ;
     }
 
 

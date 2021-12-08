@@ -34,6 +34,8 @@ class Prodotto {
     public function getPrezzo(){
         return $this->prodotto["PrezzoPieno"];
     }
+
+    
     
 
 }

@@ -3,8 +3,7 @@
 class PaymentMethod{
 
     private $paymentMethod;
-   
-
+    
     public function __construct($metodoDiPagamento){
         $this->setPaymentMethod($metodoDiPagamento);
         $this->checkPayment();
