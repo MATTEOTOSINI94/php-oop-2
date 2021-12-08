@@ -9,11 +9,11 @@ class Utente  {
    
     
 
-    public function __construct($_nome,$_cognome,$_età,$_metodoDiPagamento,$arr){
+    public function __construct($_nome,$_cognome,$_età,$_metodoDiPagamento,$mese,$anno,$arr){
         $this->setName($_nome);
         $this->setSurname($_cognome);
         $this->setEtà($_età);
-        $this->metodoDiPagamento = new PaymentMethod($_metodoDiPagamento);
+        $this->metodoDiPagamento = new PaymentMethod($_metodoDiPagamento,$mese,$anno);
         $this->prodottoAcquistato = new Prodotto($arr);
         $this-> calcolaPrezzo();
 

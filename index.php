@@ -7,6 +7,8 @@ require_once "Classi/Under18.php";
 $utente1 = new Utente(
     "Matteo","Tosini",20,
     "Apple Pay",
+    10,
+    2021,
     ["prodotto"=>
     [
     "Nome"=> "Iphone",
@@ -18,6 +20,7 @@ $utente1 = new Utente(
 $utente2 = new Over60(
     "Matteo"
     ,"Tosini",60,"Apple Pay",
+    8,2030,
     ["prodotto"=>
     [
     "Nome"=> "Iphone",
@@ -30,6 +33,7 @@ $utente2 = new Over60(
 $utente3 = new Under18(
     "Matteo","Tosini",17
     ,"Apple Pay",
+    3,2010,
     ["prodotto"=>
     [
     "Nome"=> "Iphone",
