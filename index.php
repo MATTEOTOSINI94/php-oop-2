@@ -1,7 +1,7 @@
 <?php
 require_once "Classi/Metodopagamento.php";
 require_once "Classi/Utenti.php";
-require_once "Classi/Sconto.php";
+require_once "Classi/Over60.php";
 require_once "Classi/Under18.php";
 
 $utente1 = new Utente(
@@ -43,12 +43,15 @@ $utente3 = new Under18(
     ]
 );
 
+
+
 var_dump($utente1);
 echo $utente1-> getasString();
 var_dump($utente2);
 echo $utente2-> getasString();
 var_dump($utente3);
 echo $utente3-> getasString();
+
 
 
 // var_dump($utente1->calcolaPrezzo());

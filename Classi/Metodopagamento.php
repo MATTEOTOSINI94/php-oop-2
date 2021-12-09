@@ -11,7 +11,6 @@ class PaymentMethod{
     public function __construct($metodoDiPagamento,$mese,$anno){
         $this->setPaymentMethod($metodoDiPagamento);
         $this->setDataScadenza($mese,$anno);
-        
         $this->checkPayment();
         
     }
