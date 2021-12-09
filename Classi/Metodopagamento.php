@@ -24,13 +24,15 @@ class PaymentMethod{
             $this->dataDiScadenza["mese"]=$mese;
         }
         else{
-            $this->dataDiScadenza["mese"]= "Non valido";
+        throw new Exception("Errore mesi");
+
         }
         if (is_numeric($anno) && $anno >= 2021) {
             
             $this->dataDiScadenza["anno"]=$anno;
         }else{
-            $this->dataDiScadenza["anno"]= "Carta Scaduta";
+           throw new Exception("Carta Scaduta");
+           
 
         }
        
@@ -41,7 +43,8 @@ class PaymentMethod{
         $validPayments=["PayPal","Apple Pay","Credit Card"];
         
             if (!in_array($this->paymentMethod,$validPayments,)){
-                $this->setPaymentMethod("Undefined");    
+                throw new Exception("Pagamento Non valido");
+                  
             }
         
     }

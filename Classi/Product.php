@@ -4,15 +4,14 @@ class Prodotto {
 
 
    public $prodotto=[
-        "Nome"=>"",
-        "PrezzoPieno"=>"",
+        "name"=>"",
+        "prezzo"=>"",
         "Descrizione"=>""
    ];
 
-    public function __construct($arr){
-        if (array_key_exists("prodotto",$arr)) {
-            $this->setProduct ($arr["prodotto"]["Nome"],$arr["prodotto"]["PrezzoPieno"],$arr["prodotto"]["Descrizione"]);
-         }
+    public function __construct(Array $arr){
+       
+        $this->setProduct ($arr["name"],$arr["prezzo"],$arr["Descrizione"]);
         $this->getPrezzo();
 
     }
@@ -20,10 +19,10 @@ class Prodotto {
 
     protected function setProduct($nome = null,$prezzo = null,$descrizione = null){
         if (isset($nome)) {
-            $this->prodotto["Nome"] = $nome;
+            $this->prodotto["name"] = $nome;
         }
         if (isset($prezzo)) {
-            $this->prodotto["PrezzoPieno"] = $prezzo;
+            $this->prodotto["prezzo"] = $prezzo;
         }
         if (isset($descrizione)) {
             $this->prodotto["Descrizione"] = $descrizione ;
@@ -32,7 +31,7 @@ class Prodotto {
     }
 
     public function getPrezzo(){
-        return $this->prodotto["PrezzoPieno"];
+        return $this->prodotto["prezzo"];
     }
 
     
