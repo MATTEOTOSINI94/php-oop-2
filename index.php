@@ -6,25 +6,33 @@ require_once "Classi/Utenti.php";
 require_once "Classi/Over60.php";
 require_once "Classi/Under18.php";
 
+$utente0 =[];
 
-foreach ($utenti as $utente) {
+
+foreach ($utenti as $key=>$utente) {
+    $utente0=[];
    
     foreach($prodotti as $prodotto){
-        $prod = $prodotto;
+        
     }
+   
     try {
-        $utente0 = new Utente ($utente["name"],$utente["lastname"],$utente["età"],$utente["mail"],$utente["paymethod"],rand(1,12),rand(2019,2030),$prod);
+        $utente0[] = new Utente ($utente["name"],$utente["lastname"],$utente["età"],$utente["mail"],$utente["paymethod"],rand(1,12),rand(2019,2030),$prodotto);
         var_dump($utente0);
+        
     } catch (Exception $e) {
       
         echo "Impossibile generare l'istanza per l'utente " . $utente["name"] . " " .$utente["lastname"] ." ";
         echo $e -> getMessage() ."<br>";
     }
-
-   
-   
+  
 
 }
+
+
+
+
+
 
 // $utente1 = new Utente(
 //     "Matteo","Tosini",20,

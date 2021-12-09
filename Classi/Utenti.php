@@ -1,6 +1,7 @@
 <?php 
 require_once __DIR__. "/Metodopagamento.php";
 require_once __DIR__. "/Product.php";
+require_once __DIR__. "/../Traits/Cart.php";
 class Utente  {
     public $nome;
     public $cognome;
@@ -18,8 +19,13 @@ class Utente  {
         $this->metodoDiPagamento = new PaymentMethod($_metodoDiPagamento,$mese,$anno);
         $this->prodottoAcquistato = new Prodotto($arr);
         $this-> calcolaPrezzo();
+        $this->addToCart($arr);
 
     }
+
+    use Cart ;
+
+
     public function calcolaPrezzo(){
         // restituisce il costo del prodotto acquistato!
         return $this->prodottoAcquistato->getPrezzo();
@@ -46,7 +52,6 @@ class Utente  {
 
         
     }
-
 
 
     public function getasString(){

@@ -5,7 +5,7 @@ $utenti = [
     [
       "name" => "Paolo",
       "lastname" => "Rossi",
-      "mail" => "paolorossi",
+      "mail" => "paolorossi@hmail.com",
       "address" => "Via random, 1, (PA)",
       "paymethod"=>"Apple Pay",
       "età"=>40
@@ -16,7 +16,7 @@ $utenti = [
       "lastname" => "Bianchi",
       "mail" => "mariabianchi@gmail.com",
       "address" => "Via random, 2, (MI)",
-      "paymethod"=>"Apple Py",
+      "paymethod"=>"Apple Pa",
       "età"=>40
       
     ],
