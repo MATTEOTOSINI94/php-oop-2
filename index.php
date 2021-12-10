@@ -6,25 +6,49 @@ require_once "Classi/Utenti.php";
 require_once "Classi/Over60.php";
 require_once "Classi/Under18.php";
 
-$utente0 =[];
+
 
 
 foreach ($utenti as $key=>$utente) {
-    $utente0=[];
    
-    foreach($prodotti as $prodotto){
-        
-    }
    
-    try {
-        $utente0[] = new Utente ($utente["name"],$utente["lastname"],$utente["età"],$utente["mail"],$utente["paymethod"],rand(1,12),rand(2019,2030),$prodotto);
-        var_dump($utente0);
-        
-    } catch (Exception $e) {
+        if ($utente["età"] >= 18 && $utente["età"] < 60 ) {
+            try { $user= new Utente ($utente["name"],$utente["lastname"],$utente["età"],$utente["mail"],$utente["paymethod"],rand(1,12),rand(2019,2030),$prodotti[$key]);
+            var_dump($user);
+            
+        } catch (Exception $e) {
+          
+            echo "Impossibile generare l'istanza per l'utente " . $utente["name"] . " " .$utente["lastname"] ." ";
+            echo $e -> getMessage() ."<br>";
+        }
+        }
       
-        echo "Impossibile generare l'istanza per l'utente " . $utente["name"] . " " .$utente["lastname"] ." ";
-        echo $e -> getMessage() ."<br>";
-    }
+        if ($utente["età"] > 60  ) {
+            try {
+                $userOver= new Over60 ($utente["name"],$utente["lastname"],$utente["età"],$utente["mail"],$utente["paymethod"],rand(1,12),rand(2019,2030),$prodotti[$key]);
+                var_dump($userOver);
+                
+            } catch (Exception $e) {
+              
+                echo "Impossibile generare l'istanza per l'utente " . $utente["name"] . " " .$utente["lastname"] ." ";
+                echo $e -> getMessage() ."<br>";
+            }
+            
+        }
+   
+
+        if ($utente["età"] < 18) {
+            try {
+                $userUnder= new Under18 ($utente["name"],$utente["lastname"],$utente["età"],$utente["mail"],$utente["paymethod"],rand(1,12),rand(2019,2030),$prodotti[$key]);
+                var_dump($userUnder);
+                
+            } catch (Exception $e) {
+              
+                echo "Impossibile generare l'istanza per l'utente " . $utente["name"] . " " .$utente["lastname"] ." ";
+                echo $e -> getMessage() ."<br>";
+            }
+        }
+   
   
 
 }

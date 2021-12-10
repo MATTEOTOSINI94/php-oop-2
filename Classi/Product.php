@@ -22,7 +22,7 @@ class Prodotto {
             $this->prodotto["name"] = $nome;
         }
         if (isset($prezzo)) {
-            $this->prodotto["prezzo"] =number_format($prezzo,2) ;
+            $this->prodotto["prezzo"] = $prezzo ;
         }
         if (isset($descrizione)) {
             $this->prodotto["Descrizione"] = $descrizione ;

@@ -7,8 +7,8 @@ class Under18 extends Utente {
   
 
 
-  public function __construct($_nome,$_cognome,$_età,$_metodoDiPagamento,$mese,$anno,$arr){
-      parent::__construct($_nome,$_cognome,$_età,$_metodoDiPagamento,$mese,$anno,$arr);
+  public function __construct($_nome,$_cognome,$_età,$_email,$_metodoDiPagamento,$mese,$anno,$arr){
+      parent::__construct($_nome,$_cognome,$_età,$_email,$_metodoDiPagamento,$mese,$anno,$arr);
       $this->getSconto();
       
   
